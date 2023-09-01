@@ -1,0 +1,51 @@
+<app-generic-list [lists]="movies">
+
+    <ng-container empty>
+        the list is empty jani
+    </ng-container>
+    <ng-container loading>
+        This is loading ...
+    </ng-container>
+
+    <ng-container content>
+    
+        <diV class="movies-container">
+
+            <div 
+            *ngFor="let movie of movies; let index = index" 
+            class="movie-container"
+            >
+                <a>
+                    <img src="{{movie.poster}}" alt="Poster">
+                </a>
+                <p>
+                    <a>{{movie.title}}</a>
+                </p>
+                
+                <div>
+                    <a mat-flat-button color="primary">
+                        Edit
+                    </a>
+                    
+                    <button mat-flat-button color="warn" type="buutton">
+                        Delete
+                    </button>
+                </div>
+
+                <!-- <p>
+                    {{index}}) {{movie.title | uppercase}}
+                    <button (click)="remove(index)">Remove</button>
+                </p>
+                <p>{{movie.releaseDate | date:"dd-MMMM-yyyy" | uppercase}}</p>
+                <p>{{movie.price | currency }}</p> -->
+            
+            </div>
+
+        </diV>
+    
+    </ng-container>
+
+</app-generic-list>
+
+
+
